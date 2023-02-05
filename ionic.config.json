@@ -1,5 +1,7 @@
 {
-  "name": "instavenger",
-  "integrations": {},
+  "name": "instaionic6",
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

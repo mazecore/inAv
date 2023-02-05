@@ -1,0 +1,23 @@
+<!--> <ion-row class="margin-top">
+  <div class="center">
+      <ion-item>
+        <ion-label >Username:</ion-label>
+        <ion-input [(ngModel)]="user.login" required name="login"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Password:</ion-label>
+        <ion-input [(ngModel)]="user.password" required name="password"></ion-input>
+      </ion-item>
+
+      <ion-item-divider>
+
+      </ion-item-divider>
+
+
+      <ion-button *ngIf="!loading" class="margin1" (click)="login()">Engage the liking machine!</ion-button>
+
+      <p *ngIf="loading" class="margin-top">Register</p>
+  </div>
+</ion-row> -->
+    

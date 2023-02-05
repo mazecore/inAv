@@ -1,0 +1,75 @@
+
+  <!-- <strong>{{ name }}</strong> -->
+<ion-row class="margin-top">
+  <div class="center">
+      <ion-button *ngIf="!loading" class="margin1" (click)="switch(1)">Dashka</ion-button>
+      <ion-button *ngIf="!loading" class="margin1" (click)="switch(0)">Ildar</ion-button>
+      <ion-button *ngIf="!loading" class="margin1" (click)="switch(2)">ldeezzle</ion-button>
+      <ion-button *ngIf="!loading" class="margin1" (click)="switch(3)">DariaPhoto</ion-button>
+      <ion-item>
+        <ion-label >Instagram Username:</ion-label>
+        <ion-input [(ngModel)]="user.login" required name="login"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Instagram Password:</ion-label>
+        <ion-input [(ngModel)]="user.password" type="password" required name="password"></ion-input>
+      </ion-item>
+
+      <ion-item-divider>
+
+      </ion-item-divider>
+
+      <!-- Inputs with labels -->
+
+      <ion-item>
+        <ion-label >Number Of Likes:</ion-label>
+        <ion-input type="number" [(ngModel)]="user.numberOfLikes" required name="numberOfLikes"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="user.numberOfLikes > 300">
+      <span  class="margin1 small-font red">It is highly recommended to stay below 300 likes a day to avoid being flagged and possibly losing your account.</span>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label>Tag:</ion-label>
+        <ion-input [(ngModel)]="user.tag" required name="tag" ></ion-input>
+      </ion-item>
+
+      <div>
+        <ion-button *ngIf="!loading" (click)="user.tag = 'naturephotography'">naturephotography</ion-button>
+        <ion-button *ngIf="!loading" (click)="user.tag = 'portraitphotography'">portraitphotography</ion-button>
+        <ion-button *ngIf="!loading" (click)="user.tag = 'nietzsche'">nietzsche</ion-button>
+        <ion-button *ngIf="!loading" (click)="user.tag = 'painting'">painting</ion-button>
+        <ion-button *ngIf="!loading" (click)="user.tag = 'schopenhauer'">schopenhauer</ion-button>
+      </div>
+      <ion-button *ngIf="!loading" color="success" class="margin1" (click)="getHello()">Engage the liking machine!</ion-button>
+      <div>
+        <ion-button *ngIf="!loading" color="secondary" class="margin1" (click)="user.tag = 'jess.wandering'">jess.wandering</ion-button>
+        <ion-button *ngIf="!loading" color="secondary" class="margin1" (click)="user.tag = 'sapiosexymemes'">sapiosexymemes</ion-button>
+        <ion-button *ngIf="!loading" color="secondary" class="margin1" (click)="user.tag = 'philosophy_fix'">philosophy_fix</ion-button>
+        <ion-button *ngIf="!loading" color="secondary" class="margin1" (click)="user.tag = 'casual.nihilism'">casual.nihilism</ion-button>
+        <ion-button *ngIf="!loading" color="secondary" class="margin1" (click)="user.tag = 'the_philosophers_shirt'">the_philosophers_shirt</ion-button>
+      </div>
+
+
+      
+      <ion-button *ngIf="!loading" color="success" class="margin1" (click)="likeFollowers()">Like followers</ion-button>
+      
+      <ion-button *ngIf="!loading" color="warning" class="margin1" (click)="getFollowers()">Collect followers</ion-button>
+      <ion-button *ngIf="!loading" color="warning" class="margin1" (click)="getFollowersPhotos(false)">Collect photos of followers</ion-button>
+      <ion-button *ngIf="!loading" color="warning" class="margin1" (click)="getFollowersPhotos(true)">Collect photos and auto Shutdown</ion-button>
+      <ion-button *ngIf="!loading" color="danger" class="margin1" (click)="stopCollecting()">STOP</ion-button>
+      
+      <p *ngIf="loading" class="margin-top">liking in progress...</p>
+      <p *ngIf="complete" class="margin-top red">{{complete}}</p>
+      <!-- <form [formGroup]="instaForm">
+        <ion-item>
+          <ion-label>Tag:</ion-label>
+        <ion-input  type="text" formControlName="username"></ion-input>
+      </ion-item>
+      </form> -->
+  </div>
+</ion-row>
+    
