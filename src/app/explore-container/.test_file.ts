@@ -1,6 +1,6 @@
 export const credentials = [
-           { login: 'markovartist',
-             password: 'Iamnumber15!',
+           { login: 'masagutovart',
+             password: 'Iamnumber01!',
              tags: ['nietzsche', 'existentialist', 'schopenhauer', 'art', 'charlesdarwin', 'painting', 'nietzsche']
             },
            {
@@ -11,12 +11,12 @@ export const credentials = [
            },
            {
             login: 'ldeezzle',
-            password: 'Iamnumber28!',
+            password: 'Iamnumber02!',
             tags: ['dronephotography', 'aerialphotography', 'painting', 'mavic', 'drone', 'art', 'painting']
            },
            {
-            login: 'Granovskiiphotography',
-            password: 'Fuckshit12',
+            login: 'golittlestar.press',
+            password: 'Iamnumber01!',
             tags: ['dronephotography', 'aerialphotography', 'dji', 'mavic', 'drone', 'art']
            }
         ];

@@ -19,7 +19,7 @@ export class ExploreContainerComponent implements OnInit {
   public user = {
                   login: '',
                   password: '',
-                  numberOfLikes: 200,
+                  numberOfLikes: 250,
                   tag: '',
                   shutDown: false
                 };
@@ -121,6 +121,19 @@ export class ExploreContainerComponent implements OnInit {
 
   stopCollecting() {
     this.http.get(environment.apiUrl + '/collect_photos/stop').subscribe((data: any) => {
+      this.loading = false;
+      console.log('data===>', data);
+      this.complete = data.message;
+    },
+    error => {
+      this.loading = false;
+      this.complete = `There was an error. ${error.status}: ${error.statusText}. ${environment.apiUrl}`;
+      console.log(error);
+    });
+  }
+
+  autoShutdown() {
+    this.http.get(environment.apiUrl + '/collect_photos/auto_shutdown').subscribe((data: any) => {
       this.loading = false;
       console.log('data===>', data);
       this.complete = data.message;
